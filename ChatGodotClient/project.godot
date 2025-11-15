@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ChatGodotClient"
+config/version="1.0"
+run/main_scene="uid://4sv1smb8o2hd"
+config/features=PackedStringArray("4.5", "C#", "Mobile")
+boot_splash/fullsize=false
+boot_splash/image="uid://c53kh16jui0fr"
+config/icon="uid://b1tx5e0c1mj8r"
+
+[autoload]
+
+NetworkManager="*res://ChatSignal/NetworkManager.cs"
+
+[display]
+
+window/size/viewport_width=396
+window/size/viewport_height=880
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+window/vsync/vsync_mode=0
+
+[dotnet]
+
+project/assembly_name="ChatGodotClient"
+
+[gui]
+
+theme/custom="uid://dk6oxyqidxqn4"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.9882353, 0.9843137, 0.9882353, 1)

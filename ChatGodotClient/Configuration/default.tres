@@ -1,0 +1,115 @@
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dk6oxyqidxqn4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p14ha"]
+bg_color = Color(0.95686275, 0.96862745, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckhns"]
+bg_color = Color(0.86687696, 0.90275997, 0.9999997, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckhns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glv1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iuysy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drhsr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijlf0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3eq3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glv1l"]
+bg_color = Color(0.95686275, 0.96862745, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4t45i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p14ha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4t45i"]
+content_margin_left = 10.0
+bg_color = Color(0.95686275, 0.96862745, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.20152655, 0.20152661, 0.20152643, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuysy"]
+bg_color = Color(0.95686275, 0.96862745, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 20
+Button/styles/hover = SubResource("StyleBoxFlat_p14ha")
+Button/styles/normal = SubResource("StyleBoxFlat_p14ha")
+Button/styles/pressed = SubResource("StyleBoxFlat_ckhns")
+ItemList/colors/font_color = Color(0, 0, 0, 1)
+ItemList/colors/font_hovered_color = Color(0, 0, 0, 1)
+ItemList/colors/font_hovered_selected_color = Color(0, 0, 0, 1)
+ItemList/colors/font_outline_color = Color(0, 0, 0, 1)
+ItemList/colors/font_selected_color = Color(0, 0, 0, 1)
+ItemList/styles/cursor = SubResource("StyleBoxEmpty_ckhns")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxEmpty_glv1l")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_iuysy")
+ItemList/styles/hovered = SubResource("StyleBoxEmpty_drhsr")
+ItemList/styles/hovered_selected = SubResource("StyleBoxEmpty_ijlf0")
+ItemList/styles/hovered_selected_focus = SubResource("StyleBoxEmpty_g3eq3")
+ItemList/styles/panel = SubResource("StyleBoxFlat_glv1l")
+ItemList/styles/selected = SubResource("StyleBoxEmpty_4t45i")
+ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_p14ha")
+Label/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_selected_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_uneditable_color = Color(0, 0, 0, 1)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_4t45i")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_4t45i")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_iuysy")
+RichTextLabel/colors/default_color = Color(0.0027609332, 0, 0.15431795, 0.8)

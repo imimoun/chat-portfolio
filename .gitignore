@@ -1,0 +1,10 @@
+# Current project specificity
+/documentation/
+
+# Godot project
+ChatGodotClient/.godot/
+ChatGodotClient/*.import
+ChatGodotClient/android
+
+# ChatGodotClient specificity
+ChatGodotClient/client_secret.json
