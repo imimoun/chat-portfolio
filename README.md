@@ -9,6 +9,7 @@ This project was created in 24h using Gemini AI.
 ### Getting Started
 1. Run the server: `docker build -t chatsignalserver-dev -f ChatSignalServer/Environment/Development/Dockerfile ChatSignalServer && docker run -d -p 8080:8080 chatsignalserver-dev`
 1. Run the client using Godot exe
+1. Run unitary test: `cd ChatSignalServer.Tests && dotnet restore && dotnet test --verbosity normal`
 
 ### Question & Answer
 > The project is just a support.
