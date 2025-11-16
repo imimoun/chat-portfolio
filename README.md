@@ -1,3 +1,7 @@
+![Godot Badge](https://img.shields.io/badge/Godot%20v4.5.1-478CBF?logo=godotengine&logoColor=fff&style=flat)
+![C#.NET 10.0](https://img.shields.io/badge/Client_C%23.NET-10.0-512BD4?logo=csharp&logoColor=white&style=flat-square)
+![C#.NET 10.0](https://img.shields.io/badge/Server_C%23.NET-10.0-512BD4?logo=csharp&logoColor=white&style=flat-square)
+
 # Chat Portfolio
 A real time chat using C# server and godot client.<br />
 This project was created in 24h using Gemini AI.
