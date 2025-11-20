@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4sv1smb8o2hd"]
+[gd_scene load_steps=10 format=3 uid="uid://4sv1smb8o2hd"]
 
 [ext_resource type="Script" uid="uid://ckjlxhwdsuh12" path="res://ChatInterface/SendMessageButton.cs" id="1_7diak"]
 [ext_resource type="Script" uid="uid://b16hte0xuuygi" path="res://ChatInterface/Main.cs" id="1_jxuk6"]
@@ -20,6 +20,8 @@ Panel/styles/panel = SubResource("StyleBoxFlat_7diak")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxg2q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glv2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yn5q"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -99,18 +101,42 @@ script = ExtResource("1_7diak")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Receiver" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
 
 [node name="ReceivedMessagesItemList" type="ItemList" parent="VBoxContainer/Receiver"]
 layout_mode = 2
 script = ExtResource("2_jxuk6")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6yn5q")
+
+[node name="SourceCodeRedirection" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/SourceCodeRedirection"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/SourceCodeRedirection/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/italics_font_size = 13
+bbcode_enabled = true
+text = "[i]Source code:[/i]"
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/SourceCodeRedirection/HBoxContainer"]
+layout_mode = 2
+text = "https://github.com/imimoun/chat-portfolio"
+uri = "https://github.com/imimoun/chat-portfolio"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
