@@ -158,4 +158,4 @@ text = "[i]v0.0[/i]"
 horizontal_alignment = 2
 script = ExtResource("4_6yn5q")
 
-[connection signal="pressed" from="VBoxContainer/Sender/VBoxContainer/MarginContainer/SendMessageButton" to="VBoxContainer/Sender/VBoxContainer/MarginContainer/SendMessageButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sender/VBoxContainer/MarginContainer/SendMessageButton" to="VBoxContainer/Sender/VBoxContainer/MarginContainer/SendMessageButton" method="_OnPressed"]

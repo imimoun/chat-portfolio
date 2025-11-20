@@ -3,7 +3,7 @@ using System;
 
 public partial class CloseButton : Button
 {
-	public void _on_pressed()
+	public void _OnPressed()
 	{
 		GetParent().GetParent().GetParent().GetParent().GetParent().QueueFree();
 	}
