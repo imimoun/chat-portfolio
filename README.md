@@ -6,6 +6,10 @@
 A real time chat using C# server and godot client.<br />
 This project was created in 24h using Gemini AI.
 
+### Production
+- Android version available on [Play Store](https://play.google.com/store/apps/details?id=com.chatportfolio).
+- Server is hosted on [render.com](https://render.com/).
+
 ### Getting Started
 1. Run the server: `docker build -t chatsignalserver-dev -f ChatSignalServer/Environment/Development/Dockerfile ChatSignalServer && docker run -d -p 8080:8080 chatsignalserver-dev`
 1. Run the client using Godot exe
