@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dk6oxyqidxqn4"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://dk6oxyqidxqn4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p14ha"]
 bg_color = Color(0.95686275, 0.96862745, 1, 1)
@@ -77,6 +77,18 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drhsr"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -117,3 +129,4 @@ LinkButton/colors/font_pressed_color = Color(0, 0.26666668, 0.53333336, 1)
 LinkButton/font_sizes/font_size = 13
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_iuysy")
 RichTextLabel/colors/default_color = Color(0.0027609332, 0, 0.15431795, 0.8)
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_drhsr")
