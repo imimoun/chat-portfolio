@@ -49,6 +49,10 @@ public partial class ReceivedMessagesItemList : ItemList
 		{
 			_networkManager.MessageHandler.MessageReceived -= OnMessageReceived;
 		}
+		if (_networkManager?.UserLeftHandler != null)
+		{
+			_networkManager.UserLeftHandler.UserLeftReceived -= OnUserLeftReceived;
+		}
 		if (_networkManager?.UserJoinedHandler != null)
 		{
 			_networkManager.UserJoinedHandler.UserJoinedReceived -= OnUserJoinedReceived;
