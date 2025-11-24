@@ -17,7 +17,7 @@ public partial class SendMessageButton : Button
 		_networkManager = GetNode<NetworkManager>("/root/NetworkManager");
 	}
 
-	public void _on_pressed()
+	public void _OnPressed()
 	{
 		string userNameText = _userNameLineEdit.Text;
 		string messageText = _messageLineEdit.Text;

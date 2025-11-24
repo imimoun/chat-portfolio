@@ -55,4 +55,4 @@ layout_mode = 2
 text = "I Understand"
 script = ExtResource("1_yy8ph")
 
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/MarginContainer2/CloseButton" to="MarginContainer/PanelContainer/VBoxContainer/MarginContainer2/CloseButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/MarginContainer2/CloseButton" to="MarginContainer/PanelContainer/VBoxContainer/MarginContainer2/CloseButton" method="_OnPressed"]

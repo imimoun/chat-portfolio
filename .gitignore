@@ -8,3 +8,7 @@ ChatGodotClient/android
 
 # ChatGodotClient specificity
 ChatGodotClient/client_secret.json
+
+# C# project
+bin/
+obj/

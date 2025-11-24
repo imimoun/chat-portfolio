@@ -1,9 +1,12 @@
 using Godot;
 using System;
 
-public partial class ReceivedMessagesItemList : ItemList
+public partial class ReceivedMessages : ScrollContainer
 {
 	private NetworkManager _networkManager;
+	private VBoxContainer _vBoxContainer;
+
+	private AutoScrollButton _autoScrollButton;
 
 	public override void _Ready()
 	{
@@ -12,6 +15,10 @@ public partial class ReceivedMessagesItemList : ItemList
 		_networkManager.UserJoinedHandler.UserJoinedReceived += OnUserJoinedReceived;
 		_networkManager.UserLeftHandler.UserLeftReceived += OnUserLeftReceived;
 		_networkManager.MessageHandler.MessageReceived += OnMessageReceived;
+
+		_vBoxContainer = GetNode<VBoxContainer>("VBoxContainer");
+
+		_autoScrollButton = GetNode<AutoScrollButton>("%AutoScrollButton");
 	}
 
 	/// <summary>
@@ -21,26 +28,44 @@ public partial class ReceivedMessagesItemList : ItemList
 	/// <remarks> Subtract 1 to not count self. </remarks>
 	private void OnUserCountReceived(int count)
 	{
-		AddItem($"Users connected: {count - 1}");
-		EnsureCurrentIsVisible();
+		AddNewLabel($"Users connected: {count - 1}");
 	}
 
 	private void OnUserJoinedReceived()
 	{
-		AddItem("A new user has joined the chat.");
-		EnsureCurrentIsVisible();
+		AddNewLabel("A new user has joined the chat.");
 	}
 
 	private void OnUserLeftReceived()
 	{
-		AddItem("A user has left the chat.");
-		EnsureCurrentIsVisible();
+		AddNewLabel("A user has left the chat.");
 	}
 
 	private void OnMessageReceived(string user, string message)
 	{
-		AddItem($"{user}: {message}");
-		EnsureCurrentIsVisible();
+		AddNewLabel($"{user}: {message}");
+	}
+
+	private void AddNewLabel(string text)
+	{
+		_vBoxContainer.AddChild(
+			new Label{
+				Text = text
+			}
+		);
+		_autoScrollButton.UpdateVisibility();
+	}
+
+	public bool IsAbleToScrollDown(){
+		return (
+			GetNode<VScrollBar>("_v_scroll").Value <=
+			_vBoxContainer.Size.Y - Size.Y
+		);
+	}
+
+	public void _ScrollEnded()
+	{
+		_autoScrollButton.UpdateVisibility();
 	}
 
 	public override void _ExitTree()
@@ -48,6 +73,10 @@ public partial class ReceivedMessagesItemList : ItemList
 		if (_networkManager?.MessageHandler != null)
 		{
 			_networkManager.MessageHandler.MessageReceived -= OnMessageReceived;
+		}
+		if (_networkManager?.UserLeftHandler != null)
+		{
+			_networkManager.UserLeftHandler.UserLeftReceived -= OnUserLeftReceived;
 		}
 		if (_networkManager?.UserJoinedHandler != null)
 		{

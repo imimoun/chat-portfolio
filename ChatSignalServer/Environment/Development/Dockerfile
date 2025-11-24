@@ -1,6 +1,6 @@
 # Stage 1: Build the application
 # Use the SDK image for building and publishing the C# project
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
 # Copy the project file and restore dependencies
@@ -17,7 +17,7 @@ RUN dotnet publish "ChatSignalServer.csproj" -c Release -o /app/publish --no-res
 
 # Stage 2: Create the final runtime image
 # Use a smaller, secure runtime image for the final container
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
 
 # Copy the published output from the build stage
