@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://4sv1smb8o2hd"]
+[gd_scene load_steps=11 format=3 uid="uid://4sv1smb8o2hd"]
 
 [ext_resource type="Script" uid="uid://ckjlxhwdsuh12" path="res://ChatInterface/SendMessageButton.cs" id="1_7diak"]
 [ext_resource type="Script" uid="uid://b16hte0xuuygi" path="res://ChatInterface/Main.cs" id="1_jxuk6"]
 [ext_resource type="Script" uid="uid://lwhfskc2bpeo" path="res://ChatInterface/VersionNumberLabel.cs" id="4_6yn5q"]
+[ext_resource type="Script" uid="uid://bhycdgagexhyi" path="res://ChatInterface/AutoScrollButton.cs" id="4_o273m"]
 [ext_resource type="Script" uid="uid://dgo5m8814buuj" path="res://ChatInterface/ReceivedMessages.cs" id="4_vrr5n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7diak"]
@@ -110,6 +111,7 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
 
 [node name="ReceivedMessages" type="ScrollContainer" parent="VBoxContainer/Receiver"]
+unique_name_in_owner = true
 layout_mode = 2
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
@@ -143,9 +145,28 @@ layout_mode = 2
 text = "https://github.com/imimoun/chat-portfolio"
 uri = "https://github.com/imimoun/chat-portfolio"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="AutoScroll" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="AutoScrollButton" type="Button" parent="AutoScroll"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -86.0
+offset_right = 174.5
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "↓↓↓"
+script = ExtResource("4_o273m")
+
+[node name="VersionNumberCanvas" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="VersionNumberCanvas"]
 custom_minimum_size = Vector2(100, 50)
 anchors_preset = 1
 anchor_left = 1.0
@@ -156,7 +177,7 @@ grow_horizontal = 0
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 
-[node name="VersionNumberLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer"]
+[node name="VersionNumberLabel" type="RichTextLabel" parent="VersionNumberCanvas/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "[i]v0.0[/i]"
@@ -164,3 +185,5 @@ horizontal_alignment = 2
 script = ExtResource("4_6yn5q")
 
 [connection signal="pressed" from="VBoxContainer/Sender/VBoxContainer/MarginContainer/SendMessageButton" to="VBoxContainer/Sender/VBoxContainer/MarginContainer/SendMessageButton" method="_OnPressed"]
+[connection signal="scroll_ended" from="VBoxContainer/Receiver/ReceivedMessages" to="VBoxContainer/Receiver/ReceivedMessages" method="_ScrollEnded"]
+[connection signal="pressed" from="AutoScroll/AutoScrollButton" to="AutoScroll/AutoScrollButton" method="_OnPressed"]

@@ -6,6 +6,8 @@ public partial class ReceivedMessages : ScrollContainer
 	private NetworkManager _networkManager;
 	private VBoxContainer _vBoxContainer;
 
+	private AutoScrollButton _autoScrollButton;
+
 	public override void _Ready()
 	{
 		_networkManager = GetNode<NetworkManager>("/root/NetworkManager");
@@ -15,6 +17,8 @@ public partial class ReceivedMessages : ScrollContainer
 		_networkManager.MessageHandler.MessageReceived += OnMessageReceived;
 
 		_vBoxContainer = GetNode<VBoxContainer>("VBoxContainer");
+
+		_autoScrollButton = GetNode<AutoScrollButton>("%AutoScrollButton");
 	}
 
 	/// <summary>
@@ -24,38 +28,44 @@ public partial class ReceivedMessages : ScrollContainer
 	/// <remarks> Subtract 1 to not count self. </remarks>
 	private void OnUserCountReceived(int count)
 	{
-		_vBoxContainer.AddChild(
-			new Label{
-				Text = $"Users connected: {count - 1}"
-			}
-		);
+		AddNewLabel($"Users connected: {count - 1}");
 	}
 
 	private void OnUserJoinedReceived()
 	{
-		_vBoxContainer.AddChild(
-			new Label{
-				Text = "A new user has joined the chat."
-			}
-		);
+		AddNewLabel("A new user has joined the chat.");
 	}
 
 	private void OnUserLeftReceived()
 	{
-		_vBoxContainer.AddChild(
-			new Label{
-				Text = "A user has left the chat."
-			}
-		);
+		AddNewLabel("A user has left the chat.");
 	}
 
 	private void OnMessageReceived(string user, string message)
 	{
+		AddNewLabel($"{user}: {message}");
+	}
+
+	private void AddNewLabel(string text)
+	{
 		_vBoxContainer.AddChild(
 			new Label{
-				Text = $"{user}: {message}"
+				Text = text
 			}
 		);
+		_autoScrollButton.UpdateVisibility();
+	}
+
+	public bool IsAbleToScrollDown(){
+		return (
+			GetNode<VScrollBar>("_v_scroll").Value <=
+			_vBoxContainer.Size.Y - Size.Y
+		);
+	}
+
+	public void _ScrollEnded()
+	{
+		_autoScrollButton.UpdateVisibility();
 	}
 
 	public override void _ExitTree()
